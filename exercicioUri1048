@@ -1,0 +1,37 @@
+package uri1048;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Locale.setDefault (Locale. US);
+		Scanner sc = new Scanner(System.in);
+		double salario, novoSalario = 0;
+		int porcentagem = 0;
+		salario = sc.nextDouble();
+		if (salario <= 400) {
+			novoSalario = salario * 1.15;
+			porcentagem = 15;
+		} else if (salario <= 800) {
+			novoSalario = salario * 1.12;
+			porcentagem = 12;
+		} else if (salario <= 1200) {
+			novoSalario = salario * 1.10;
+			porcentagem = 10;
+		} else if (salario <= 2000) {
+			novoSalario = salario * 1.07;
+			porcentagem = 7;
+		} else {
+			novoSalario = salario * 1.04;
+			porcentagem = 4;
+		}
+		System.out.printf("Novo salario: %.2f%n", novoSalario);
+		System.out.printf("Reajuste ganho: %.2f%n", novoSalario - salario);
+		System.out.println("Em percentual: " + porcentagem + " %");
+
+		sc.close();
+
+	}
+	
+}
